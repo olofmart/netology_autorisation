@@ -3,9 +3,7 @@ package ru.olmart.autorisation.repository;
 import org.springframework.stereotype.Repository;
 import ru.olmart.autorisation.model.Authorities;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class UserRepository {
@@ -18,7 +16,17 @@ public class UserRepository {
         usersList.put("masha", "qwer");
     }
     public List<Authorities> getUserAuthorities(String user, String password) {
-
-        return ...;
+        List<Authorities> authoritiesList = new ArrayList<>();
+        if(user.equals("vlad") && usersList.get(user).equals(password)) {
+            authoritiesList.add(Authorities.READ);
+            authoritiesList.add(Authorities.WRITE);
+            authoritiesList.add(Authorities.DELETE);
+            return authoritiesList;
+        }
+        if (usersList.containsKey(user) && usersList.get(user).equals(password)) {
+            authoritiesList.add(Authorities.READ);
+            return authoritiesList;
+        }
+        return authoritiesList;
     }
 }

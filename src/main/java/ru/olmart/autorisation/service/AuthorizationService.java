@@ -1,5 +1,6 @@
 package ru.olmart.autorisation.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.olmart.autorisation.exception.InvalidCredentials;
 import ru.olmart.autorisation.exception.UnauthorizedUser;
@@ -9,9 +10,10 @@ import java.util.List;
 
 @Service
 public class AuthorizationService {
-    UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-    List<Authorities> getAuthorities(String user, String password) {
+    public List<Authorities> getAuthorities(String user, String password) {
         if (isEmpty(user) || isEmpty(password)) {
             throw new InvalidCredentials("User name or password is empty");
         }
