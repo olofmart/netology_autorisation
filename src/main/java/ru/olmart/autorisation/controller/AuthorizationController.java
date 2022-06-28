@@ -1,6 +1,5 @@
 package ru.olmart.autorisation.controller;
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +8,6 @@ import ru.olmart.autorisation.exception.InvalidCredentials;
 import ru.olmart.autorisation.exception.UnauthorizedUser;
 import ru.olmart.autorisation.model.Authorities;
 import ru.olmart.autorisation.service.AuthorizationService;
-
 import java.util.List;
 
 @RestController

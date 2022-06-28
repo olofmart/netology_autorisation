@@ -2,7 +2,6 @@ package ru.olmart.autorisation.repository;
 
 import org.springframework.stereotype.Repository;
 import ru.olmart.autorisation.model.Authorities;
-
 import java.util.*;
 
 @Repository
